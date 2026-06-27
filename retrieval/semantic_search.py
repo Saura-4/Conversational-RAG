@@ -31,4 +31,8 @@ def print_search_results(results):
         print(f"\nResult {i+1}")
         print(f"Source: {meta['source']},chunk{meta['chunk']}")
         print(f"Distance: {distance}")
-        print(f"Content {doc}\n")
+        try:
+            print(f"Content {doc}\n")
+        except UnicodeEncodeError:
+            safe_doc = doc.encode("ascii", "replace").decode("ascii")
+            print(f"Content {safe_doc}\n")

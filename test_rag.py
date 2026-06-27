@@ -63,4 +63,7 @@ for i,query in enumerate(test_queries,start=1):
         print(f"  • {source}")
 
     print("\nResponse:")
-    print(response)
+    try:
+        print(response)
+    except UnicodeEncodeError:
+        print(response.encode("ascii", "replace").decode("ascii"))
