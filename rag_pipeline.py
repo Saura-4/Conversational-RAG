@@ -4,7 +4,7 @@ from generation.core_generation import get_generator
 from contextualization.core_contextualization import get_contextualizer
 
 # Load strategies via factories
-collection, process_and_add_documents = get_indexer("chroma_page")
+collection, process_and_add_documents = get_indexer("chroma_embedding")
 semantic_search, get_context_with_sources, print_search_results = get_retriever("semantic")
 generate_response = get_generator("ollama")
 create_session, add_message, format_history_for_prompt, contextualize_query = get_contextualizer("memory")
